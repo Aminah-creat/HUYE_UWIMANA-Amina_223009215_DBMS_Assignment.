@@ -1,0 +1,174 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1031
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA(ID INT(160),F_NAME CHAR(9),L_NAME CHAR(8),GENDER CHAR(1),PROVINCE CHAR(6),DISTRICT CHAR(15),SECTOR CHAR(15),CELL CHAR(9),EMAIL_ADRESS VARCHAR(30),TEL INT(10));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+mysql> INSERT INTO NGOMA VALUES('101','Aisha','SANO','F','North','Musanze','Musanze','Rwambogo','aishatwizere@gmail.com','0784283133');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('102','Aminah','UWIMANA','F','South','Huye','Ngoma','Ruhande','aminauwimana37@gmail.com','0792352345');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('104','Mogan','ISHIMWE','M','Kigali','Kicukiro','Remera','Masaka','mogaishimwe12@gmail.com','0789664980');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('105','James','SUGIRA','M','Kigali','Gasabo','Kimironko','Kanyinya','jamessugira@gmail.com','0788876023');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> SELECT*FROM NGOMA;
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR    | CELL      | EMAIL_ADRESS             | TEL       |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+
+|  101 | Aisha  | SANO    | F      | North    | Musanze  | Musanze   | Rwambogo  | aishatwizere@gmail.com   | 784283133 |
+|  102 | Aminah | UWIMANA | F      | South    | Huye     | Ngoma     | Ruhande   | aminauwimana37@gmail.com | 792352345 |
+|  104 | Mogan  | ISHIMWE | M      | Kigali   | Kicukiro | Remera    | Masaka    | mogaishimwe12@gmail.com  | 789664980 |
+|  105 | James  | SUGIRA  | M      | Kigali   | Gasabo   | Kimironko | Kanyinya  | jamessugira@gmail.com    | 788876023 |
+|  106 | Zawadi | SANGWA  | F      | North    | Musanze  | Muhoza    | Ruhengeri | zawadisangwa@gmail.com   | 722573417 |
+|  107 | Mike   | SHEMA   | M      | West     | Rubavu   | Jomba     | Jenda     | mikeshema03@gmail.com    | 798645234 |
+|  108 | Mariam | UWERA   | F      | East     | Kayonza  | Kabarondo | Gakoro    | mariamuwera@gmail.com    | 781732472 |
+|  109 | Arsene | JABO    | M      | North    | Gicumbi  | Rwamiko   | Kigabiro  | arsenejabo@gmail.com     | 791602841 |
+|  110 | Annah  | MUGISHA | F      | East     | Gatsibo  | Remera    | Rurembo   | mugishaannah@gmail.com   |  78078568 |
+|  111 | Isaac  | MUHIRE  | M      | Kigali   | Gasabo   | Remera    | Ndera     | isaacmuhire@gmail.com    | 724536786 |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD LOCATION CHAR(10);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR    | CELL      | EMAIL_ADRESS             | TEL       | LOCATION |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+|  101 | Aisha  | SANO    | F      | North    | Musanze  | Musanze   | Rwambogo  | aishatwizere@gmail.com   | 784283133 | NULL     |
+|  102 | Aminah | UWIMANA | F      | South    | Huye     | Ngoma     | Ruhande   | aminauwimana37@gmail.com | 792352345 | NULL     |
+|  104 | Mogan  | ISHIMWE | M      | Kigali   | Kicukiro | Remera    | Masaka    | mogaishimwe12@gmail.com  | 789664980 | NULL     |
+|  105 | James  | SUGIRA  | M      | Kigali   | Gasabo   | Kimironko | Kanyinya  | jamessugira@gmail.com    | 788876023 | NULL     |
+|  106 | Zawadi | SANGWA  | F      | North    | Musanze  | Muhoza    | Ruhengeri | zawadisangwa@gmail.com   | 722573417 | NULL     |
+|  107 | Mike   | SHEMA   | M      | West     | Rubavu   | Jomba     | Jenda     | mikeshema03@gmail.com    | 798645234 | NULL     |
+|  108 | Mariam | UWERA   | F      | East     | Kayonza  | Kabarondo | Gakoro    | mariamuwera@gmail.com    | 781732472 | NULL     |
+|  109 | Arsene | JABO    | M      | North    | Gicumbi  | Rwamiko   | Kigabiro  | arsenejabo@gmail.com     | 791602841 | NULL     |
+|  110 | Annah  | MUGISHA | F      | East     | Gatsibo  | Remera    | Rurembo   | mugishaannah@gmail.com   |  78078568 | NULL     |
+|  111 | Isaac  | MUHIRE  | M      | Kigali   | Gasabo   | Remera    | Ndera     | isaacmuhire@gmail.com    | 724536786 | NULL     |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET LOCATION='Kamonyi' WHERE GENDER='M' AND PROVINCE='Kigali';
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR    | CELL      | EMAIL_ADRESS             | TEL       | LOCATION |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+|  101 | Aisha  | SANO    | F      | North    | Musanze  | Musanze   | Rwambogo  | aishatwizere@gmail.com   | 784283133 | NULL     |
+|  102 | Aminah | UWIMANA | F      | South    | Huye     | Ngoma     | Ruhande   | aminauwimana37@gmail.com | 792352345 | NULL     |
+|  104 | Mogan  | ISHIMWE | M      | Kigali   | Kicukiro | Remera    | Masaka    | mogaishimwe12@gmail.com  | 789664980 | Kamonyi  |
+|  105 | James  | SUGIRA  | M      | Kigali   | Gasabo   | Kimironko | Kanyinya  | jamessugira@gmail.com    | 788876023 | Kamonyi  |
+|  106 | Zawadi | SANGWA  | F      | North    | Musanze  | Muhoza    | Ruhengeri | zawadisangwa@gmail.com   | 722573417 | NULL     |
+|  107 | Mike   | SHEMA   | M      | West     | Rubavu   | Jomba     | Jenda     | mikeshema03@gmail.com    | 798645234 | NULL     |
+|  108 | Mariam | UWERA   | F      | East     | Kayonza  | Kabarondo | Gakoro    | mariamuwera@gmail.com    | 781732472 | NULL     |
+|  109 | Arsene | JABO    | M      | North    | Gicumbi  | Rwamiko   | Kigabiro  | arsenejabo@gmail.com     | 791602841 | NULL     |
+|  110 | Annah  | MUGISHA | F      | East     | Gatsibo  | Remera    | Rurembo   | mugishaannah@gmail.com   |  78078568 | NULL     |
+|  111 | Isaac  | MUHIRE  | M      | Kigali   | Gasabo   | Remera    | Ndera     | isaacmuhire@gmail.com    | 724536786 | Kamonyi  |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET LOCATION='Kigali' WHERE GENDER='F';
+Query OK, 5 rows affected (0.00 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR    | CELL      | EMAIL_ADRESS             | TEL       | LOCATION |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+|  101 | Aisha  | SANO    | F      | North    | Musanze  | Musanze   | Rwambogo  | aishatwizere@gmail.com   | 784283133 | Kigali   |
+|  102 | Aminah | UWIMANA | F      | South    | Huye     | Ngoma     | Ruhande   | aminauwimana37@gmail.com | 792352345 | Kigali   |
+|  104 | Mogan  | ISHIMWE | M      | Kigali   | Kicukiro | Remera    | Masaka    | mogaishimwe12@gmail.com  | 789664980 | Kamonyi  |
+|  105 | James  | SUGIRA  | M      | Kigali   | Gasabo   | Kimironko | Kanyinya  | jamessugira@gmail.com    | 788876023 | Kamonyi  |
+|  106 | Zawadi | SANGWA  | F      | North    | Musanze  | Muhoza    | Ruhengeri | zawadisangwa@gmail.com   | 722573417 | Kigali   |
+|  107 | Mike   | SHEMA   | M      | West     | Rubavu   | Jomba     | Jenda     | mikeshema03@gmail.com    | 798645234 | NULL     |
+|  108 | Mariam | UWERA   | F      | East     | Kayonza  | Kabarondo | Gakoro    | mariamuwera@gmail.com    | 781732472 | Kigali   |
+|  109 | Arsene | JABO    | M      | North    | Gicumbi  | Rwamiko   | Kigabiro  | arsenejabo@gmail.com     | 791602841 | NULL     |
+|  110 | Annah  | MUGISHA | F      | East     | Gatsibo  | Remera    | Rurembo   | mugishaannah@gmail.com   |  78078568 | Kigali   |
+|  111 | Isaac  | MUHIRE  | M      | Kigali   | Gasabo   | Remera    | Ndera     | isaacmuhire@gmail.com    | 724536786 | Kamonyi  |
++------+--------+---------+--------+----------+----------+-----------+-----------+--------------------------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP EMAIL_ADRESS;
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+---------+--------+----------+----------+-----------+-----------+-----------+----------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR    | CELL      | TEL       | LOCATION |
++------+--------+---------+--------+----------+----------+-----------+-----------+-----------+----------+
+|  101 | Aisha  | SANO    | F      | North    | Musanze  | Musanze   | Rwambogo  | 784283133 | Kigali   |
+|  102 | Aminah | UWIMANA | F      | South    | Huye     | Ngoma     | Ruhande   | 792352345 | Kigali   |
+|  104 | Mogan  | ISHIMWE | M      | Kigali   | Kicukiro | Remera    | Masaka    | 789664980 | Kamonyi  |
+|  105 | James  | SUGIRA  | M      | Kigali   | Gasabo   | Kimironko | Kanyinya  | 788876023 | Kamonyi  |
+|  106 | Zawadi | SANGWA  | F      | North    | Musanze  | Muhoza    | Ruhengeri | 722573417 | Kigali   |
+|  107 | Mike   | SHEMA   | M      | West     | Rubavu   | Jomba     | Jenda     | 798645234 | NULL     |
+|  108 | Mariam | UWERA   | F      | East     | Kayonza  | Kabarondo | Gakoro    | 781732472 | Kigali   |
+|  109 | Arsene | JABO    | M      | North    | Gicumbi  | Rwamiko   | Kigabiro  | 791602841 | NULL     |
+|  110 | Annah  | MUGISHA | F      | East     | Gatsibo  | Remera    | Rurembo   |  78078568 | Kigali   |
+|  111 | Isaac  | MUHIRE  | M      | Kigali   | Gasabo   | Remera    | Ndera     | 724536786 | Kamonyi  |
++------+--------+---------+--------+----------+----------+-----------+-----------+-----------+----------+
+10 rows in set (0.00 sec)
+mysql> SELECT ID,L_NAME,PROVINCE,DISTRICT,TEL FROM NGOMA;
++------+---------+----------+----------+-----------+
+| ID   | L_NAME  | PROVINCE | DISTRICT | TEL       |
++------+---------+----------+----------+-----------+
+|  101 | SANO    | North    | Musanze  | 784283133 |
+|  102 | UWIMANA | South    | Huye     | 792352345 |
+|  104 | ISHIMWE | Kigali   | Kicukiro | 789664980 |
+|  105 | SUGIRA  | Kigali   | Gasabo   | 788876023 |
+|  106 | SANGWA  | North    | Musanze  | 722573417 |
+|  107 | SHEMA   | West     | Rubavu   | 798645234 |
+|  108 | UWERA   | East     | Kayonza  | 781732472 |
+|  109 | JABO    | North    | Gicumbi  | 791602841 |
+|  110 | MUGISHA | East     | Gatsibo  |  78078568 |
+|  111 | MUHIRE  | Kigali   | Gasabo   | 724536786 |
++------+---------+----------+----------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA WHERE PROVINCE='North' AND GENDER='F';
++------+--------+--------+--------+----------+----------+---------+-----------+-----------+----------+
+| ID   | F_NAME | L_NAME | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | TEL       | LOCATION |
++------+--------+--------+--------+----------+----------+---------+-----------+-----------+----------+
+|  101 | Aisha  | SANO   | F      | North    | Musanze  | Musanze | Rwambogo  | 784283133 | Kigali   |
+|  106 | Zawadi | SANGWA | F      | North    | Musanze  | Muhoza  | Ruhengeri | 722573417 | Kigali   |
++------+--------+--------+--------+----------+----------+---------+-----------+-----------+----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA WHERE PROVINCE='North' OR GENDER='F';
++------+--------+---------+--------+----------+----------+-----------+-----------+-----------+----------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR    | CELL      | TEL       | LOCATION |
++------+--------+---------+--------+----------+----------+-----------+-----------+-----------+----------+
+|  101 | Aisha  | SANO    | F      | North    | Musanze  | Musanze   | Rwambogo  | 784283133 | Kigali   |
+|  102 | Aminah | UWIMANA | F      | South    | Huye     | Ngoma     | Ruhande   | 792352345 | Kigali   |
+|  106 | Zawadi | SANGWA  | F      | North    | Musanze  | Muhoza    | Ruhengeri | 722573417 | Kigali   |
+|  108 | Mariam | UWERA   | F      | East     | Kayonza  | Kabarondo | Gakoro    | 781732472 | Kigali   |
+|  109 | Arsene | JABO    | M      | North    | Gicumbi  | Rwamiko   | Kigabiro  | 791602841 | NULL     |
+|  110 | Annah  | MUGISHA | F      | East     | Gatsibo  | Remera    | Rurembo   |  78078568 | Kigali   |
++------+--------+---------+--------+----------+----------+-----------+-----------+-----------+----------+
+6 rows in set (0.00 sec)
+
+mysql>
